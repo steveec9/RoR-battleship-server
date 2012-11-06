@@ -1,0 +1,9 @@
+<div class="btn-group">
+  <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">Select Game<span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <% @games.each do |game, name| %>
+      <li><a href=<%= game_path(game) %>><%= name %></a></li>
+    <% end %>
+  </ul>
+</div>
+<br><br><br>

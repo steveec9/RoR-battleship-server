@@ -1,0 +1,83 @@
+<div class="container" id="board_container" width=350>
+  <div class="row-fluid">
+    <div class="span6"><div class="page-header"><h1><%= @board1[:username] %></h1></div></div>
+    <div class="span6"><div class="page-header"><h1><%= @board2[:username] %></h1></div></div>
+  </div>
+  <div class="row-fluid">
+    <div class="span6">
+      <div class="span1"> <span class="badge badge-success">-</span> </div>
+      <div class="span1"> <span class="badge badge-success">A</span> </div>
+      <div class="span1"> <span class="badge badge-success">B</span> </div>
+      <div class="span1"> <span class="badge badge-success">C</span> </div>
+      <div class="span1"> <span class="badge badge-success">D</span> </div>
+      <div class="span1"> <span class="badge badge-success">E</span> </div>
+      <div class="span1"> <span class="badge badge-success">F</span> </div>
+      <div class="span1"> <span class="badge badge-success">G</span> </div>
+      <div class="span1"> <span class="badge badge-success">H</span> </div>
+      <div class="span1"> <span class="badge badge-success">I</span> </div>
+      <div class="span1"> <span class="badge badge-success">J</span> </div>
+    </div>
+    <div class="span6">
+      <div class="span1"> <span class="badge badge-success">-</span> </div>
+      <div class="span1"> <span class="badge badge-success">A</span> </div>
+      <div class="span1"> <span class="badge badge-success">B</span> </div>
+      <div class="span1"> <span class="badge badge-success">C</span> </div>
+      <div class="span1"> <span class="badge badge-success">D</span> </div>
+      <div class="span1"> <span class="badge badge-success">E</span> </div>
+      <div class="span1"> <span class="badge badge-success">F</span> </div>
+      <div class="span1"> <span class="badge badge-success">G</span> </div>
+      <div class="span1"> <span class="badge badge-success">H</span> </div>
+      <div class="span1"> <span class="badge badge-success">I</span> </div>
+      <div class="span1"> <span class="badge badge-success">J</span> </div>
+    </div>
+  </div>
+
+  <div class="row-fluid">
+    <div class="span6">
+      <% row = 1 %>
+      <% @board1[:board].each do |line| %>
+        <div class="row-fluid">
+          <div class="span12">
+            <div class="span1"><span class="badge badge-success"><%= row %></span> </div>
+            <% line.each do |element| %>
+              <% if element == "H" %>
+                <div class="span1"> <span class="badge badge-important"><%= element %></span></div>
+              <% elsif element == "M" %>
+                <div class="span1"> <span class="badge badge-info"><%= element %></span></div>
+              <% elsif element == "x" %>
+                <div class="span1"> <span class="badge"><%= element %></span></div>
+              <% else %>
+                <div class="span1"> <span class="badge badge-inverse"><%= element %></span></div>
+              <% end %>
+            <% end %>
+            <% row += 1 %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="span6">
+      <% row2 = 1 %>
+      <% @board2[:board].each do |line| %>
+        <div class="row-fluid">
+          <div class="span12">
+            <div class="span1"><span class="badge badge-success"><%= row2 %></span> </div>
+            <% line.each do |element| %>
+              <% if element == "H" %>
+                <div class="span1"> <span class="badge badge-important"><%= element %></span></div>
+              <% elsif element == "M" %>
+                <div class="span1"> <span class="badge badge-info"><%= element %></span></div>
+              <% elsif element == "x" %>
+                <div class="span1"> <span class="badge"><%= element %></span></div>
+              <% else %>
+                <div class="span1"> <span class="badge badge-inverse"><%= element %></span></div>
+              <% end %>
+            <% end %>
+            <% row2 += 1 %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+

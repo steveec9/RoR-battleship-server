@@ -1,0 +1,27 @@
+<div class="btn-group">
+  <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">Select Game<span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <% @games.each do |game, name| %>
+      <li><a href=<%= game_path(game) %>><%= name %></a></li>
+    <% end %>
+  </ul>
+</div>
+<br><br><br>
+
+<%= render(:partial => "partials/board") %>
+
+<script type="text/javascript">
+  function updateBoards() {
+    $.ajax({
+      url: '<%= boards_game_path(@game) %>',
+      success: function(data) {
+        $('#board_container').replaceWith(data);
+      }
+    });
+    setTimeout(updateBoards, 1000);
+  }
+
+  $(document).ready(function() {
+    setTimeout(updateBoards, 1000);
+  });
+</script>
