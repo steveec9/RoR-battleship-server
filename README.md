@@ -2,7 +2,7 @@ battleship
 ==========
 This is a very simple battleship game. The application acts as a server and coordinates game play between two successively joining clients. A client can interact with the server via three API calls:
 
-  - POST **/games/join**
+POST **/games/join**
 <pre>
 Given the following board(notice how the numbers are used to indicate the length of ship):
   -----------------------------------------
@@ -44,7 +44,7 @@ You would call /games/join with the following parameters:
 The response should contain the game ID with the following JSON form:
 { "game_id" : 123 }
 </pre>
-  - GET  **/games/status**
+GET  **/games/status**
 <pre>
 /games/status expects the following parameters:
 { "user" : "JDogg", "game_id" : 123 }
@@ -52,7 +52,7 @@ The response should contain the game ID with the following JSON form:
 The response should contain the following:
 { "game_status" : "playing" /* or "won", "lost" */, "my_turn" : true /* or false */ }
 </pre>
-  - POST **/games/fire**
+POST **/games/fire**
 <pre>
 Expects the following parameters:
 { "user" : "JDogg", "game_id" : 123, "shot" : "E9" /* Possible values are in range A1-J10 */ }
