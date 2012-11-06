@@ -58,7 +58,7 @@ Expects the following parameters:
 { "user" : "JDogg", "game_id" : 123, "shot" : "E9" /* Possible values are in range A1-J10 */ }
 
 The response will tell you if you hit something and whether or not that hit resulted in a sunk ship:
-{ "hit" : true, "sunk" : 5 /* number indicating length of ship that was sunk */
+{ "hit" : true, "sunk" : 5 /* number indicating length of ship that was sunk */ }
 </pre>
 
 The flow of a game is simple: client calls join, then proceeds to call status to determine the game status, if game is still active and it is client's turn, a call to fire should be made to fire at opponent's board. Loop until game status is no longer "playing".
