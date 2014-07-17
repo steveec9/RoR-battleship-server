@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Battleship::Application.config.secret_token = 'a70a7379834f3023b52929d3668541aa770c714d28744fa87ff38b19bd0f08a5b377fd3606e8d7851527b05f772a3739f671c31cd9b7457c86618606246686b5'
+Battleship::Application.config.secret_token = '0df156c2fd6b0f13b24948b17b0e555462cd9d07f96b24e5b3b6a58b054a1f88148cb5a956a723e66394c7a2022f0e4ab2435b201477852b16897da877727585'
